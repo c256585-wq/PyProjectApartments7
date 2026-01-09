@@ -16,7 +16,7 @@ def print_records(records):
         )
 
 
-def report_all_sorted(database):
+def report_all_sorted(database):  # полный список всех квартиросъёмщиков
     data = database[:] # создаётся копия списка
 
     def compare(a, b):
@@ -32,7 +32,7 @@ def report_all_sorted(database):
     print_records(data)
     # Получает уже отсортированный список
 
-def report_with_benefits(database):
+def report_with_benefits(database):     # cписок всех квартиросъёмщиков, имеющих льготы
     data = [r for r in database if r[10]]
 
     def compare(a, b):
@@ -46,7 +46,7 @@ def report_with_benefits(database):
     print_records(data) # см. пояснение выше
 
 
-def report_by_area(database):
+def report_by_area(database):   # cписок всех квартир с общей площадью в диапазоне от N1 до N2 кв.м.
     try:
         n1 = float(input("Введите N1: "))
         n2 = float(input("Введите N2: "))
@@ -71,4 +71,5 @@ def report_by_area(database):
         return a[7] < b[7]
 
     shell_sort(data, compare)
+
     print_records(data) # см. пояснение выше
